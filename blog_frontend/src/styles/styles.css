@@ -15,7 +15,157 @@ footer p {
   @apply text-center;
 }
 
-#homeSection1 h1 {
-  color: red;
-  @apply text-center;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.textReveal-Animation {
+  animation: reveal 1s ease-in-out;
+}
+
+#homeSection1 {
+  background: linear-gradient(-45deg, rgba(249, 115, 22, 0.8), rgb(255, 165, 0), rgba(255, 140, 0, 0.8), rgb(255, 69, 0));
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  @apply text-white min-h-screen flex flex-col justify-center items-center;
+}
+#homeSection1 #homeSection1Container {
+  @apply container mx-auto text-center p-5;
+}
+#homeSection1 #homeSection1Container h1 {
+  @apply text-6xl font-bold mb-5;
+}
+#homeSection1 #homeSection1Container p {
+  @apply text-2xl mb-8 font-bold;
+}
+#homeSection1 #homeSection1Container #homeSecton1Link a {
+  @apply bg-white text-orange-500 font-semibold py-3 px-6 mx-2 rounded-full shadow-md transition duration-300 ease-in-out;
+}
+#homeSection1 #homeSection1Container #homeSecton1Link a:hover {
+  @apply bg-orange-100 transition duration-300;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#signInSection1BackHome i {
+  @apply absolute ml-5 mt-5 border p-2 rounded-full border-white bg-white transition duration-300;
+}
+#signInSection1BackHome i:hover {
+  @apply bg-gray-200 border-gray-200 transition duration-300;
+}
+
+#signInSection1 {
+  background: linear-gradient(-45deg, rgba(249, 115, 22, 0.8), rgb(255, 165, 0), rgba(255, 140, 0, 0.8), rgb(255, 69, 0));
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  @apply min-h-screen flex items-center justify-center bg-gray-100;
+}
+#signInSection1 #signInSection1Container {
+  @apply bg-white p-8 rounded-lg shadow-2xl max-w-md w-full;
+}
+#signInSection1 #signInSection1Container h1 {
+  @apply text-2xl font-bold text-center mb-6;
+}
+#signInSection1 #signInSection1Container form div {
+  @apply mb-4;
+}
+#signInSection1 #signInSection1Container form div label {
+  @apply block text-gray-700 mb-2;
+}
+#signInSection1 #signInSection1Container form div input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500;
+}
+#signInSection1 #signInSection1Container form button {
+  @apply w-full bg-orange-500 text-white py-2 px-4 rounded transition duration-200;
+}
+#signInSection1 #signInSection1Container form button:hover {
+  @apply bg-orange-600 transition duration-200;
+}
+#signInSection1 #signInSection1Container p {
+  @apply text-center mt-4;
+}
+#signInSection1 #signInSection1Container p a {
+  @apply text-orange-500 transition duration-300;
+}
+#signInSection1 #signInSection1Container p a:hover {
+  @apply text-orange-700 transition duration-300;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#signUpSection1BackHome i {
+  @apply absolute ml-5 mt-5 border p-2 rounded-full border-white bg-white transition duration-300;
+}
+#signUpSection1BackHome i:hover {
+  @apply bg-gray-200 border-gray-200 transition duration-300;
+}
+
+#signUpSection1 {
+  background: linear-gradient(-45deg, rgb(255, 69, 0), rgba(255, 140, 0, 0.8), rgb(255, 165, 0), rgba(249, 115, 22, 0.8));
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  @apply min-h-screen flex items-center justify-center bg-gray-100;
+}
+#signUpSection1 #signUpSection1Container {
+  @apply bg-white p-8 rounded-lg shadow-2xl max-w-md w-full;
+}
+#signUpSection1 #signUpSection1Container h1 {
+  @apply text-2xl font-bold text-center mb-6;
+}
+#signUpSection1 #signUpSection1Container form div {
+  @apply mb-4;
+}
+#signUpSection1 #signUpSection1Container form div label {
+  @apply block text-gray-700 mb-2;
+}
+#signUpSection1 #signUpSection1Container form div input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500;
+}
+#signUpSection1 #signUpSection1Container form button {
+  @apply w-full bg-orange-500 text-white py-2 px-4 rounded transition duration-200;
+}
+#signUpSection1 #signUpSection1Container form button:hover {
+  @apply bg-orange-600 transition duration-200;
+}
+#signUpSection1 #signUpSection1Container p {
+  @apply text-center mt-4;
+}
+#signUpSection1 #signUpSection1Container p a {
+  @apply text-orange-500 transition duration-300;
+}
+#signUpSection1 #signUpSection1Container p a:hover {
+  @apply text-orange-700 transition duration-300;
 }/*# sourceMappingURL=styles.css.map */
