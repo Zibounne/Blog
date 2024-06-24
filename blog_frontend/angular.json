@@ -27,10 +27,11 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/404.html"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles/styles.sass"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -49,8 +50,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "30kb",
+                  "maximumError": "40kb"
                 }
               ],
               "outputHashing": "all"
@@ -95,7 +96,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles/styles.sass"
             ],
             "scripts": []
           }

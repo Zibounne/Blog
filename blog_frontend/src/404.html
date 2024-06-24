@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            background-color: #F5F4E1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .gif-container {
+            margin: auto;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        span {
+            font-style: italic;
+        }
+        #span2 {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>404 Not Found</h1>
+        <p>Oops! The page you are looking for could not be found.</p>
+        <span>Redirect to <span id="span2">Home</span> : </span><span id="countdown">3</span>
+        <div class="gif-container">
+            <img src="assets/pictures/404/404.gif" alt="404Gif">
+        </div>
+        <p>If you are not redirected automatically, follow <a href="/Portfolio/">this link</a>.</p>
+
+        <script>
+            let countdown = document.getElementById('countdown');
+            let count = 3;
+            let timer = setInterval(function() {
+                count--;
+                if (count <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'https://zibounne.github.io/Portfolio/';
+                } else {
+                    countdown.textContent = count;
+                }
+            }, 1000);
+        </script>
+    </div>
+</body>
+</html>

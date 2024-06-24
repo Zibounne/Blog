@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+header p {
+  @apply text-center;
+}
+
+footer p {
+  @apply text-center;
+}
+
+#homeSection1 h1 {
+  color: red;
+  @apply text-center;
+}/*# sourceMappingURL=styles.css.map */
