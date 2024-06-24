@@ -41,7 +41,7 @@ footer p {
 #homeSection1 {
   background: linear-gradient(-45deg, rgba(249, 115, 22, 0.8), rgb(255, 165, 0), rgba(255, 140, 0, 0.8), rgb(255, 69, 0));
   background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
+  animation: gradientAnimation 5s ease infinite;
   @apply text-white min-h-screen flex flex-col justify-center items-center;
 }
 #homeSection1 #homeSection1Container {

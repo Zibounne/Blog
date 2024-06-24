@@ -1,0 +1,17 @@
+# Virtual environment
+env/
+
+# Editor configuration files
+.vscode/
+
+# Environment configuration files
+*.env
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# notes
+
+notes.txt
