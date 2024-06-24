@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:blog-frontend": "node dist/blog-frontend/server/server.mjs"
+    "serve:ssr:blog_frontend": "node dist/blog_frontend/server/server.mjs"
   },
   "private": true,
   "dependencies": {
