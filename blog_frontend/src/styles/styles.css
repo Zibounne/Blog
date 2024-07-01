@@ -168,4 +168,12 @@ footer p {
 }
 #signUpSection1 #signUpSection1Container p a:hover {
   @apply text-orange-700 transition duration-300;
+}
+
+.success-message {
+  @apply text-green-500 mt-5;
+}
+
+.error-message {
+  @apply text-red-500 mt-5;
 }/*# sourceMappingURL=styles.css.map */
