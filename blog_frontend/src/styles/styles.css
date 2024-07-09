@@ -176,4 +176,13 @@ footer p {
 
 .error-message {
   @apply text-red-500 mt-5;
+}
+
+#profileSection1 {
+  background: linear-gradient(-45deg, rgba(249, 115, 22, 0.8), rgb(255, 165, 0), rgba(255, 140, 0, 0.8), rgb(255, 69, 0));
+  background-size: 400% 400%;
+  @apply min-h-screen bg-gray-100;
+}
+#profileSection1 h1 {
+  @apply text-center text-white text-2xl pt-10;
 }/*# sourceMappingURL=styles.css.map */
