@@ -6,14 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class SignInService {
+export class SignUpService {
 
-  private apiUrl = 'http://localhost:8000/api/accounts';
+  private apiUrl = 'http://localhost:8000/api/account';
 
   constructor(private http: HttpClient) { }
 
-  signIn(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signIn/`, credentials);
+  signUp(user: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signUp/`, user);
   }
 
 }

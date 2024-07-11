@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { SignUpService } from '../../services/sign-up/sign-up.service';
+import { SignUpService } from '../../services/accounts/sign-up/sign-up.service';
 
 @Component({
   selector: 'app-sign-up',

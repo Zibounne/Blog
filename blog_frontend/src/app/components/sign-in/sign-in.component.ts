@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { SignInService } from '../../services/sign-in/sign-in.service';
+import { SignInService } from '../../services/accounts/sign-in/sign-in.service';
 
 @Component({
   selector: 'app-sign-in',
