@@ -5,22 +5,22 @@
 <section id="signUpSection1">
     <div id="signUpSection1Container">
       <h1>Sign Up</h1>
-      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
         <div>
           <label for="username">Username</label>
-          <input type="username" id="username" formControlName="username" required>
+          <input formControlName="username" type="username" id="username" placeholder="Username" required>
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" formControlName="email" required>
+          <input formControlName="email" type="email" id="email" placeholder="Email" required>
         </div>
         <div>
           <label for="password">Password</label>
-          <input type="password" id="password" formControlName="password" required>
+          <input formControlName="password" type="password" id="password" placeholder="Password" required>
         </div>
         <div>
           <label for="confirm-password">Confirm Password</label>
-          <input type="password" id="confirm-password" formControlName="confirmPassword" required>
+          <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="Confirm-Password" required>
         </div>
         <button type="submit">Sign Up</button>
       </form>

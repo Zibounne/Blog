@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 
 export class SignUpService {
 
-  private apiUrl = 'http://localhost:8000/api/accounts/register/';
+  private apiUrl = 'http://localhost:8000/api/accounts';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  register(user: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, user);
+  signUp(user: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signUp/`, user);
   }
 
 }

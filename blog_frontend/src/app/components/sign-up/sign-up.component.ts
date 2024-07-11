@@ -26,44 +26,45 @@ export class SignUpComponent {
   // Constructor
   constructor
   (
-    private titleService: Title,
     private fb: FormBuilder,
     private signUpService: SignUpService
   ) 
   {
     this.signUpForm = this.fb.group
     ({
+      username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required]]
     });
   }
 
-  //Init
-  ngOnInit(): void {
-    this.titleService.setTitle("Blog | Sign Up");
-  }
+  // Method | Sign Up
+  signUp() {
 
-  onSubmit() {
-    if (this.signUpForm.valid) {
-      const user = {
-        email: this.signUpForm.value.email,
-        username: this.signUpForm.value.username,
-        password: this.signUpForm.value.password
-      };
-
-      this.signUpService.register(user).subscribe({
-        next: (response) => {
-          this.successMessage = 'Registration successful!';
-          this.errorMessage = null;
-        },
-        error: (error) => {
-          this.successMessage = null;
-          this.errorMessage = 'Registration failed. Please try again.';
-        }
-      });
+    if (this.signUpForm.invalid) {
+      this.errorMessage = "Please fill out the form correctly.";
+      return;
     }
+
+    if (this.signUpForm.value.password !== this.signUpForm.value.confirmPassword) {
+      this.errorMessage = "Passwords do not match.";
+      return;
+    }
+
+    const { username, email, password, confirmPassword } = this.signUpForm.value;
+
+    this.signUpService.signUp({ username, email, password, confirm_password: confirmPassword }).subscribe(
+      response => {
+        this.successMessage = 'User registered successfully';
+        this.errorMessage = null;
+        this.signUpForm.reset();
+      },
+      error => {
+        this.errorMessage = 'There was an error ! ' + error.error.message;
+        this.successMessage = null;
+      }
+    );
   }
 
 }
