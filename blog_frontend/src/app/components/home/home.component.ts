@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    RouterLink
-  ],
+  imports: [],
   templateUrl: './home.component.html',
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
+  // Constructor
   constructor(private titleService: Title) { }
 
+  // Init
   ngOnInit(): void {
     this.titleService.setTitle("Blog | Home");
   }

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { SignUpService } from '../../services/sign-up/sign-up.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+import { SignUpService } from '../../services/sign-up/sign-up.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -26,7 +28,9 @@ export class SignUpComponent {
   // Constructor
   constructor
   (
+    private titleService: Title,
     private fb: FormBuilder,
+    private router: Router,
     private signUpService: SignUpService
   ) 
   {
@@ -37,6 +41,11 @@ export class SignUpComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]]
     });
+  }
+
+  //Init
+  ngOnInit(): void {
+    this.titleService.setTitle("Blog | Sign Up");
   }
 
   // Method | Sign Up
@@ -59,6 +68,9 @@ export class SignUpComponent {
         this.successMessage = 'User registered successfully';
         this.errorMessage = null;
         this.signUpForm.reset();
+        setTimeout(() => {
+          this.router.navigate(['/sign-in']);
+        }, 2000);
       },
       error => {
         this.errorMessage = 'There was an error ! ' + error.error.message;

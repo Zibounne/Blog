@@ -38,25 +38,25 @@ footer p {
   animation: reveal 1s ease-in-out;
 }
 
-#homeSection1 {
+#welcomeSection1 {
   background: linear-gradient(-45deg, rgba(249, 115, 22, 0.8), rgb(255, 165, 0), rgba(255, 140, 0, 0.8), rgb(255, 69, 0));
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
   @apply text-white min-h-screen flex flex-col justify-center items-center;
 }
-#homeSection1 #homeSection1Container {
+#welcomeSection1 #welcomeSection1Container {
   @apply container mx-auto text-center p-5;
 }
-#homeSection1 #homeSection1Container h1 {
+#welcomeSection1 #welcomeSection1Container h1 {
   @apply text-6xl font-bold mb-5;
 }
-#homeSection1 #homeSection1Container p {
+#welcomeSection1 #welcomeSection1Container p {
   @apply text-2xl mb-8 font-bold;
 }
-#homeSection1 #homeSection1Container #homeSecton1Link a {
+#welcomeSection1 #welcomeSection1Container #welcomeSecton1Link a {
   @apply bg-white text-orange-500 font-semibold py-3 px-6 mx-2 rounded-full shadow-md transition duration-300 ease-in-out;
 }
-#homeSection1 #homeSection1Container #homeSecton1Link a:hover {
+#welcomeSection1 #welcomeSection1Container #welcomeSecton1Link a:hover {
   @apply bg-orange-100 transition duration-300;
 }
 

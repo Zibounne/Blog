@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 
 export class SignInService {
 
-  private apiUrl = 'http://localhost:8000/api/accounts/login/';
+  private apiUrl = 'http://localhost:8000/api/accounts';
 
   constructor(private http: HttpClient) { }
 
-  login(credentials: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, credentials);
+  signIn(credentials: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signIn/`, credentials);
   }
 
 }

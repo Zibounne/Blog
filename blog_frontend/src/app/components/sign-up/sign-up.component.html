@@ -1,4 +1,4 @@
-<a href="/" id="signUpSection1BackHome">
+<a href="/welcome" id="signUpSection1BackHome">
     <i class="fa-solid fa-arrow-left"></i>
 </a>
 
@@ -8,19 +8,19 @@
       <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
         <div>
           <label for="username">Username</label>
-          <input formControlName="username" type="username" id="username" placeholder="Username" required>
+          <input formControlName="username" type="username" id="username" placeholder="username" required>
         </div>
         <div>
           <label for="email">Email</label>
-          <input formControlName="email" type="email" id="email" placeholder="Email" required>
+          <input formControlName="email" type="email" id="email" placeholder="email" required>
         </div>
         <div>
           <label for="password">Password</label>
-          <input formControlName="password" type="password" id="password" placeholder="Password" required>
+          <input formControlName="password" type="password" id="password" placeholder="password" required>
         </div>
         <div>
           <label for="confirm-password">Confirm Password</label>
-          <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="Confirm-Password" required>
+          <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="confirm Password" required>
         </div>
         <button type="submit">Sign Up</button>
       </form>

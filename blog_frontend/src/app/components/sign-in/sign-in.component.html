@@ -1,18 +1,18 @@
-<a href="/" id="signInSection1BackHome">
+<a href="/welcome" id="signInSection1BackHome">
     <i class="fa-solid fa-arrow-left"></i>
 </a>
 
 <section id="signInSection1">
     <div id="signInSection1Container">
       <h1>Sign In</h1>
-      <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="signInForm" (ngSubmit)="signIn()">
         <div>
           <label for="username">Username</label>
-          <input type="username" id="username" formControlName="username" required>
+          <input formControlName="username" type="username" id="username" placeholder="username" required>
         </div>
         <div>
           <label for="password">Password</label>
-          <input type="password" id="password" formControlName="password" required>
+          <input formControlName="password" type="password" id="password" placeholder="password" required>
         </div>
         <button type="submit">Sign In</button>
       </form>
