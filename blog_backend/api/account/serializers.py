@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth import authenticate
 
+# Sign Up
 class signUpSerializer(serializers.ModelSerializer):
     
     password = serializers.CharField(write_only = True)
@@ -29,6 +30,7 @@ class signUpSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         return user
     
+# Sign In
 class signInSerializer(serializers.Serializer):
     
     username = serializers.CharField()

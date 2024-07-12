@@ -37,7 +37,7 @@ export class SignInComponent implements OnInit {
     this.signInForm = this.fb.group
     ({
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', Validators.required]
     });
   }
 
@@ -62,7 +62,8 @@ export class SignInComponent implements OnInit {
         localStorage.setItem('token', response.token);
         setTimeout(() => {
           this.router.navigate(['/profile']);
-        }, 2000);      },
+        }, 2000);
+      },
       error => {
         this.successMessage = null;
         this.errorMessage = 'Invalid credentials. Please try again.';

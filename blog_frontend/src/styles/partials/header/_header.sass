@@ -5,5 +5,26 @@
 ////////////////////////// Header ///////////////////////////
 
 header
-    p
-        @apply text-center
+    animation: translateYHeader 0.75s ease-out
+    @apply bg-gray-800 text-white py-2 text-xl font-bold
+    nav
+        @apply flex
+        ul
+            @apply flex
+            li
+                @apply pr-5 flex
+                button
+                    @apply transition-all duration-150 ease-in-out
+                    i
+                        @apply pl-2
+                button:hover
+                    @apply border-b-orange-600 text-orange-600
+                button.active
+                    @apply border-4 border-orange-600 bg-orange-600 rounded text-white
+
+#headerLogo
+    i
+        @apply text-4xl ml-5 mr-6
+
+#headerSignOut
+    @apply absolute right-0 pr-5 py-1

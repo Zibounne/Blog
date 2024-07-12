@@ -1,1 +1,35 @@
-<p>header works!</p>
+<header id="header">
+    <nav>
+        <ul>
+            <li>
+                <div id="headerLogo">
+                    <i class="fa-brands fa-blogger-b"></i>
+                </div>
+            </li>
+            <li>
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/']">Home</a>
+                    <a [routerLink]="['/']">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </button>
+            </li>
+            <li>
+                <button routerLinkActive="active">
+                    <a [routerLink]="['/profile']">Profile</a>
+                    <a [routerLink]="['/profile']">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </button>
+            </li>
+            <li id="headerSignOut">
+                <button routerLinkActive="active">
+                    <a [routerLink]="['/sign-out']">Sign Out</a>
+                    <a [routerLink]="['/sign-out']">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>

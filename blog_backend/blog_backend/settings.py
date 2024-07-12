@@ -154,6 +154,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -162,6 +164,9 @@ REST_FRAMEWORK = {
 
 # In development
 CORS_ALLOW_ALL_ORIGINS = True
+
+# Allow cookies to be included in cross-origin requests
+CORS_ALLOW_CREDENTIALS = True
 
 # In Production
 """

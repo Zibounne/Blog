@@ -7,12 +7,48 @@
   user-select: none;
 }
 
-header p {
-  @apply text-center;
+header {
+  animation: translateYHeader 0.75s ease-out;
+  @apply bg-gray-800 text-white py-2 text-xl font-bold;
+}
+header nav {
+  @apply flex;
+}
+header nav ul {
+  @apply flex;
+}
+header nav ul li {
+  @apply pr-5 flex;
+}
+header nav ul li button {
+  @apply transition-all duration-150 ease-in-out;
+}
+header nav ul li button i {
+  @apply pl-2;
+}
+header nav ul li button:hover {
+  @apply border-b-orange-600 text-orange-600;
+}
+header nav ul li button.active {
+  @apply border-4 border-orange-600 bg-orange-600 rounded text-white;
 }
 
+#headerLogo i {
+  @apply text-4xl ml-5 mr-6;
+}
+
+#headerSignOut {
+  @apply absolute right-0 pr-5 py-1;
+}
+
+footer {
+  @apply fixed w-full bottom-0 transition-transform duration-300 ease-linear transform;
+}
 footer p {
-  @apply text-center;
+  @apply py-2 text-center text-white bg-gray-800;
+}
+footer p span {
+  @apply text-orange-500 font-bold;
 }
 
 @keyframes gradientAnimation {
@@ -58,6 +94,14 @@ footer p {
 }
 #welcomeSection1 #welcomeSection1Container #welcomeSecton1Link a:hover {
   @apply bg-orange-100 transition duration-300;
+}
+
+#homeSection1 {
+  background-color: #FD8824;
+  @apply min-h-screen;
+}
+#homeSection1 h1 {
+  @apply text-center text-white text-2xl pt-10;
 }
 
 @keyframes gradientAnimation {
@@ -179,9 +223,8 @@ footer p {
 }
 
 #profileSection1 {
-  background: linear-gradient(-45deg, rgba(249, 115, 22, 0.8), rgb(255, 165, 0), rgba(255, 140, 0, 0.8), rgb(255, 69, 0));
-  background-size: 400% 400%;
-  @apply min-h-screen bg-gray-100;
+  background-color: #FD8824;
+  @apply min-h-screen;
 }
 #profileSection1 h1 {
   @apply text-center text-white text-2xl pt-10;
