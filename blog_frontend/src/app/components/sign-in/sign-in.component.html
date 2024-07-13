@@ -8,11 +8,11 @@
       <form [formGroup]="signInForm" (ngSubmit)="signIn()">
         <div>
           <label for="username">Username</label>
-          <input formControlName="username" type="username" id="username" placeholder="username" required>
+          <input formControlName="username" type="text" id="username" placeholder="username" autocomplete="username" required>
         </div>
         <div>
           <label for="password">Password</label>
-          <input formControlName="password" type="password" id="password" placeholder="password" required>
+          <input formControlName="password" type="password" id="password" placeholder="password" autocomplete="new-password" required>
         </div>
         <button type="submit">Sign In</button>
       </form>

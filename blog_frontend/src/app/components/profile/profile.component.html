@@ -1,7 +1,42 @@
 <app-header></app-header>
 
 <section id="profileSection1">
-    <h1>Welcome to your profile {{ "username" }}</h1>
+    <div id="profileSection1Container">
+        <div id="profileSection1Content">
+            <div *ngIf="profile" id="profileSection1ContentHead">
+                <img src="https://via.placeholder.com/150" alt="pictureProfile">
+                <div>
+                    <h1>{{ profile.username }}</h1>
+                    <button routerLinkActive="active">
+                        <a [routerLink]="['/profile/edit']">
+                            Edit profile
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="profile" id="profileSection1ContentBody">
+                <h2>Additional Information</h2>
+                <div id="profileSection1ContentBodyDiv">
+                    <div>
+                        <h3>Date joined</h3>
+                        <p class="text-gray-800">{{ profile.date_joined | date }}</p>
+                    </div>
+                    <div>
+                        <h3>First name</h3>
+                        <p class="text-gray-800">{{ profile.first_name }}</p>
+                    </div>
+                    <div>
+                        <h3>Last name</h3>
+                        <p class="text-gray-800">{{ profile.last_name }}</p>
+                    </div>
+                    <div>
+                        <h3>Role</h3>
+                        <p class="font-bold" [ngClass]="getUserRoleClass()">{{ role }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <app-footer></app-footer>

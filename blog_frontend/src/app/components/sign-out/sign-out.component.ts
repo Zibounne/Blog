@@ -27,7 +27,7 @@ export class SignOutComponent implements OnInit {
     this.signOutService.signOut().subscribe(
       response => {
         localStorage.removeItem('token');
-        this.router.navigate(['/sign-in']);
+        this.router.navigate(['/welcome']);
       },
       error => {
         console.error('Sign out failed.', error);

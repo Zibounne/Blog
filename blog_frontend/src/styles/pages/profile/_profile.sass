@@ -2,12 +2,45 @@
 
 ///////////////////////// Animation /////////////////////////
 
-////////////////////////// Sign In //////////////////////////
+////////////////////////// Profile //////////////////////////
         
-//Section 1
+// Section 1
 
 #profileSection1
     background-color: #FD8824
     @apply min-h-screen
-    h1
-        @apply text-center text-white text-2xl pt-10
+    #profileSection1Container
+        @apply container p-8 mx-auto
+        #profileSection1Content
+            @apply p-6 bg-white rounded-lg shadow-xl
+            #profileSection1ContentHead
+                @apply flex items-center space-x-6
+                img
+                    @apply w-32 h-32 border-2 border-gray-300 rounded-full
+                div
+                    h1
+                        @apply text-3xl font-bold text-gray-900
+                    button
+                        @apply mt-4
+                        a
+                            @apply text-blue-500
+                        a:hover
+                            @apply underline
+            #profileSection1ContentBody
+                @apply mt-8
+                h2
+                    @apply text-xl font-semibold text-gray-800
+                #profileSection1ContentBodyDiv
+                    @apply grid grid-cols-1 gap-6 mt-4 md:grid-cols-3
+                    div
+                        h3
+                            @apply text-gray-600
+
+.text-green
+    @apply text-green-500
+
+.text-blue
+    @apply text-blue-500
+
+.text-red
+    @apply text-red-500

@@ -6,8 +6,9 @@ from rest_framework.decorators import permission_classes
 from rest_framework.authtoken.models import Token
 
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
-from api.account.serializers import signUpSerializer
+from api.account.serializers import signUpSerializer, UserSerializer
 
 # Sign Up
 @api_view(['POST'])
@@ -39,3 +40,22 @@ def signIn(request):
 def signOut(request):
     logout(request)
     return Response({'message': 'Logged out successfully.'}, status = status.HTTP_200_OK)
+
+# Profile
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def profile(request):
+    user = request.user
+    serializer = UserSerializer(user)
+    return Response(serializer.data, status = status.HTTP_200_OK)
+
+# Profile Edit
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def profileUpdate(request):
+    user = request.user
+    serializer = UserSerializer(user, data = request.data, partial = True)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status = status.HTTP_200_OK)
+    return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)

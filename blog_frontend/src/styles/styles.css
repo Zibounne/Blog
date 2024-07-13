@@ -226,6 +226,79 @@ footer p span {
   background-color: #FD8824;
   @apply min-h-screen;
 }
-#profileSection1 h1 {
-  @apply text-center text-white text-2xl pt-10;
+#profileSection1 #profileSection1Container {
+  @apply container p-8 mx-auto;
+}
+#profileSection1 #profileSection1Container #profileSection1Content {
+  @apply p-6 bg-white rounded-lg shadow-xl;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentHead {
+  @apply flex items-center space-x-6;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentHead img {
+  @apply w-32 h-32 border-2 border-gray-300 rounded-full;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentHead div h1 {
+  @apply text-3xl font-bold text-gray-900;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentHead div button {
+  @apply mt-4;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentHead div button a {
+  @apply text-blue-500;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentHead div button a:hover {
+  @apply underline;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentBody {
+  @apply mt-8;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentBody h2 {
+  @apply text-xl font-semibold text-gray-800;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentBody #profileSection1ContentBodyDiv {
+  @apply grid grid-cols-1 gap-6 mt-4 md:grid-cols-3;
+}
+#profileSection1 #profileSection1Container #profileSection1Content #profileSection1ContentBody #profileSection1ContentBodyDiv div h3 {
+  @apply text-gray-600;
+}
+
+.text-green {
+  @apply text-green-500;
+}
+
+.text-blue {
+  @apply text-blue-500;
+}
+
+.text-red {
+  @apply text-red-500;
+}
+
+#profileEditSection1 {
+  background-color: #FD8824;
+}
+#profileEditSection1 #profileEditSection1Container {
+  @apply container p-8 mx-auto min-h-screen;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content {
+  @apply p-6 bg-white rounded-lg shadow-xl;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content h1 {
+  @apply mb-4 text-3xl font-bold text-gray-900;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content form div {
+  @apply mb-4;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content form div label {
+  @apply block text-gray-700;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content form div input {
+  @apply w-full p-2 border border-gray-300 rounded-md;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content form div div {
+  @apply text-red-500;
+}
+#profileEditSection1 #profileEditSection1Container #profileEditSection1Content form button {
+  @apply px-4 py-2 text-white bg-blue-500 rounded-md;
 }/*# sourceMappingURL=styles.css.map */
