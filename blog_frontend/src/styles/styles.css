@@ -275,6 +275,13 @@ footer p span {
   @apply text-red-500;
 }
 
+#profileEditSection1BackProfile i {
+  @apply absolute ml-5 mt-5 border p-2 rounded-full border-white bg-white transition duration-300;
+}
+#profileEditSection1BackProfile i:hover {
+  @apply bg-gray-200 border-gray-200 transition duration-300;
+}
+
 #profileEditSection1 {
   background-color: #FD8824;
 }
