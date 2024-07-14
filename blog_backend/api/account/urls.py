@@ -1,4 +1,5 @@
 from django.urls import path
+
 from api.account.views import signUp, signIn, signOut, profile, profileUpdate
 
 urlpatterns = [
