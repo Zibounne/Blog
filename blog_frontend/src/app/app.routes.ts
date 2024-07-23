@@ -10,12 +10,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UserGuardService } from './services/accounts/guard/user-guard/user-guard.service';
 import { GuestGuardService } from './services/accounts/guard/guest-guard/guest-guard.service';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { ArticleComponent } from './components/article/article.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [UserGuardService] },
     { path: 'sign-out', component: SignOutComponent, canActivate: [UserGuardService] },
     { path: 'profile', component: ProfileComponent, canActivate: [UserGuardService] },
     { path: 'profile/edit', component: ProfileEditComponent, canActivate: [UserGuardService ]},
+    { path: 'articles', component: ArticleComponent, canActivate: [UserGuardService] },
 
     { path: 'welcome', component: WelcomeComponent, canActivate: [GuestGuardService] },
     { path: 'sign-in', component: SignInComponent, canActivate: [GuestGuardService] },

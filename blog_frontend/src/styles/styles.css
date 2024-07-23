@@ -1,15 +1,18 @@
+/* ==================== Tailwind ==================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ====================== Base ====================== */
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 
+/* ==================== Partials ==================== */
 header {
   animation: translateYHeader 0.75s ease-out;
-  @apply bg-gray-800 text-white py-2 text-xl font-bold;
+  @apply bg-orange-500 text-white py-2 text-xl font-bold;
 }
 header nav {
   @apply flex;
@@ -27,10 +30,10 @@ header nav ul li button i {
   @apply pl-2;
 }
 header nav ul li button:hover {
-  @apply border-b-orange-600 text-orange-600;
+  @apply border-b-slate-800 text-slate-800;
 }
 header nav ul li button.active {
-  @apply border-4 border-orange-600 bg-orange-600 rounded text-white;
+  @apply border-4 border-slate-800 bg-slate-800 rounded text-white;
 }
 
 #headerLogo i {
@@ -45,12 +48,13 @@ footer {
   @apply fixed w-full bottom-0 transition-transform duration-300 ease-linear transform;
 }
 footer p {
-  @apply py-2 text-center text-white bg-gray-800;
+  @apply py-2 text-center text-white bg-orange-500;
 }
 footer p span {
-  @apply text-orange-500 font-bold;
+  @apply text-slate-800 font-bold;
 }
 
+/* ===================== Pages ====================== */
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -97,8 +101,7 @@ footer p span {
 }
 
 #homeSection1 {
-  background-color: #FD8824;
-  @apply min-h-screen;
+  @apply min-h-screen bg-slate-800;
 }
 #homeSection1 h1 {
   @apply text-center text-white text-2xl pt-10;
@@ -223,8 +226,7 @@ footer p span {
 }
 
 #profileSection1 {
-  background-color: #FD8824;
-  @apply min-h-screen;
+  @apply min-h-screen bg-slate-800;
 }
 #profileSection1 #profileSection1Container {
   @apply container p-8 mx-auto;
@@ -283,7 +285,7 @@ footer p span {
 }
 
 #profileEditSection1 {
-  background-color: #FD8824;
+  @apply bg-slate-800;
 }
 #profileEditSection1 #profileEditSection1Container {
   @apply container p-8 mx-auto min-h-screen;
@@ -308,4 +310,8 @@ footer p span {
 }
 #profileEditSection1 #profileEditSection1Container #profileEditSection1Content form button {
   @apply px-4 py-2 text-white bg-blue-500 rounded-md;
+}
+
+#articleSection1 h1 {
+  @apply text-white;
 }/*# sourceMappingURL=styles.css.map */

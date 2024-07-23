@@ -9,16 +9,26 @@ export class SessionService {
   constructor() { }
 
   isConnected(): boolean {
-    if (typeof localStorage !== 'undefined') {
-      return localStorage.getItem('token') !== null;
-    }
-    return false;
+    return typeof localStorage !== 'undefined' && localStorage.getItem('token') !== null;
   }
 
   isDisconnect(): void {
     if (typeof localStorage !== 'undefined') {
       localStorage.removeItem('token');
     }
+  }
+
+  setToken(token: string): void {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('token', token);
+    }
+  }
+
+  getToken(): string | null {
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem('token');
+    }
+    return null;
   }
 
 }
