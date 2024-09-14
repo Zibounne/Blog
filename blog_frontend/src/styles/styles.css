@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 /* ==================== Layouts ===================== */
-body {
-  @apply bg-slate-200;
-}
-
 .success-message {
   @apply text-green-500 mt-2;
 }
@@ -16,40 +12,6 @@ body {
 }
 
 /* ==================== Partials ==================== */
-header {
-  animation: translateYHeader 0.75s ease-out;
-  @apply bg-slate-200 text-slate-800 py-2 text-xl font-bold;
-}
-header nav {
-  @apply flex;
-}
-header nav ul {
-  @apply flex;
-}
-header nav ul li {
-  @apply pr-5 flex;
-}
-header nav ul li button {
-  @apply transition-all duration-150 ease-in-out w-28;
-}
-header nav ul li button i {
-  @apply pl-2;
-}
-header nav ul li button:hover {
-  @apply border-b-slate-800 text-slate-800 transition-all duration-150 ease-in-out text-2xl;
-}
-header nav ul li button.active {
-  @apply border-4 border-slate-800 bg-slate-800 rounded text-white;
-}
-
-#headerLogo i {
-  @apply text-4xl ml-6 mr-6;
-}
-
-#headerSignOut {
-  @apply absolute right-0 pr-10 py-2;
-}
-
 footer {
   @apply w-full bottom-0 transition-transform duration-300 ease-linear transform bg-slate-200;
 }
@@ -201,7 +163,37 @@ footer p span {
 }
 
 /* ========== Welcome ========= */
-@keyframes gradientAnimation {
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -212,7 +204,7 @@ footer p span {
     background-position: 0% 50%;
   }
 }
-@keyframes reveal {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -220,30 +212,51 @@ footer p span {
     opacity: 1;
   }
 }
-.textReveal-Animation {
-  animation: reveal 1s ease-in-out;
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.welcomeAnimationHeaderLogo {
+  animation: slideInLeft 1s ease-in-out;
 }
 
-#welcomeSection1 {
-  background: linear-gradient(-45deg, rgba(30, 41, 59, 0.8), rgb(40, 50, 72), rgba(50, 60, 85, 0.8), rgb(60, 70, 98));
+.welcomeAnimationHeaderLink {
+  animation: slideInTop 1.5s ease-in-out;
+}
+
+.welcomeAnimationSection1Background {
   background-size: 200% 200%;
-  animation: gradientAnimation 5s ease infinite;
-  @apply text-white min-h-screen flex flex-col justify-center items-center;
+  animation: gradient 10s ease infinite;
 }
-#welcomeSection1 #welcomeSection1Container {
-  @apply container mx-auto text-center p-5 text-slate-100;
+
+.welcomeAnimationSection1ContainerTextSlideLeft {
+  animation: slideInLeft 1.2s ease-out;
 }
-#welcomeSection1 #welcomeSection1Container h1 {
-  @apply text-6xl font-bold mb-5;
+
+.welcomeAnimationSection1ContainerTextSlideRight {
+  animation: slideInRight 1.2s ease-out;
 }
-#welcomeSection1 #welcomeSection1Container p {
-  @apply text-2xl mb-8 font-bold;
+
+.welcomeSection1ContainerFadeIn {
+  animation: fadeIn 2s ease-in-out;
 }
-#welcomeSection1 #welcomeSection1Container #welcomeSecton1Link a {
-  @apply bg-slate-100 text-slate-700 font-semibold py-3 px-6 mx-2 rounded-full shadow-md transition duration-300 ease-in-out;
+
+.welcomeSection1ContainerTextFadeIn {
+  animation: fadeIn 1.5s ease-out;
 }
-#welcomeSection1 #welcomeSection1Container #welcomeSecton1Link a:hover {
-  @apply bg-slate-200 transition duration-300;
+
+.welcomeSection1ContainerTextFadeInZoom {
+  animation: fadeInZoom 1s ease-out;
+}
+
+#welcome {
+  @apply welcomeAnimationSection1Background bg-gradient-to-r from-slate-200 via-gray-400 to-gray-600;
 }
 
 /* ========== Profile ========= */

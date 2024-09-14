@@ -2,7 +2,33 @@
 
 ///////////////////////// KeyFrames /////////////////////////
 
-@keyframes gradientAnimation
+// Section 1
+
+@keyframes slideInLeft
+    from
+        transform: translateX(-100%)
+        opacity: 0
+    to
+        transform: translateX(0)
+        opacity: 1
+
+@keyframes slideInRight
+    0%
+        transform: translateX(100%)
+        opacity: 0
+    100%
+        transform: translateX(0)
+        opacity: 1
+
+@keyframes slideInTop
+    from
+        transform: translateY(-100%)
+        opacity: 0
+    to
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes gradient
     0%
         background-position: 0% 50%
     50%
@@ -10,37 +36,60 @@
     100%
         background-position: 0% 50%
 
-@keyframes reveal
+@keyframes fadeIn
     0%
         opacity: 0
     100%
         opacity: 1
 
+@keyframes fadeInZoom
+    0%
+        opacity: 0
+        transform: scale(0.8)
+    100%
+        opacity: 1
+        transform: scale(1)
+
+// Section 2
+
 ///////////////////////// Animation /////////////////////////
-
-.textReveal-Animation
-    animation: reveal 1s ease-in-out
-
-////////////////////////// Welcome //////////////////////////
 
 // Section 1
 
-#welcomeSection1
-    background: linear-gradient(-45deg, rgba(30, 41, 59, 0.8), rgba(40, 50, 72, 1), rgba(50, 60, 85, 0.8), rgba(60, 70, 98, 1))
-    background-size: 200% 200%
-    animation: gradientAnimation 5s ease infinite
-    @apply text-white min-h-screen flex flex-col justify-center items-center
-    #welcomeSection1Container
-        @apply container mx-auto text-center p-5 text-slate-100
-        h1
-            @apply text-6xl font-bold mb-5
-        p
-            @apply text-2xl mb-8 font-bold
-        #welcomeSecton1Link
-            a
-                @apply bg-slate-100 text-slate-700 font-semibold py-3 px-6 mx-2 rounded-full shadow-md transition duration-300 ease-in-out
-            a:hover
-                @apply bg-slate-200 transition duration-300
+.welcomeAnimationHeaderLogo
+    animation: slideInLeft 1s ease-in-out
+
+.welcomeAnimationHeaderLink
+    animation: slideInTop 1.5s ease-in-out
+
+.welcomeAnimationSection1Background
+  background-size: 200% 200%
+  animation: gradient 10s ease infinite
+
+.welcomeAnimationSection1ContainerTextSlideLeft
+    animation: slideInLeft 1.2s ease-out
+    
+.welcomeAnimationSection1ContainerTextSlideRight
+    animation: slideInRight 1.2s ease-out
+    
+.welcomeSection1ContainerFadeIn
+    animation: fadeIn 2s ease-in-out
+
+.welcomeSection1ContainerTextFadeIn
+    animation: fadeIn 1.5s ease-out
+
+.welcomeSection1ContainerTextFadeInZoom
+    animation: fadeInZoom 1s ease-out
+
+// Section 2
+
+////////////////////////// Welcome //////////////////////////
+
+#welcome
+    @apply welcomeAnimationSection1Background bg-gradient-to-r from-slate-200 via-gray-400 to-gray-600
+    
+// Section 1
+
 
 ///////////////////////// Responsive ////////////////////////
 
