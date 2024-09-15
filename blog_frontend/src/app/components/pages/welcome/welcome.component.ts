@@ -17,6 +17,12 @@ import { trigger, style, transition, animate, query, stagger } from '@angular/an
 
 export class WelcomeComponent implements OnInit {
 
+  /////////////////////// Property ////////////////////////
+
+  private sections: HTMLElement[] = [];
+  private currentSectionIndex = 0;
+  private isScrolling = false;
+
   ////////////////////// Constructor //////////////////////
 
   constructor(private titleService: Title) { }
@@ -27,5 +33,6 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle("Blog | Welcome");
   }
+
 
 }
