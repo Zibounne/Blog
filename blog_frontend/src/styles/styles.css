@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 /* ==================== Layouts ===================== */
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.no-scroll {
+  @apply overflow-hidden;
+}
+
 .success-message {
   @apply text-green-500 mt-2;
 }
@@ -222,6 +230,17 @@ footer p span {
     transform: scale(1);
   }
 }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .welcomeAnimationHeaderLogo {
   animation: slideInLeft 1s ease-in-out;
 }
@@ -230,33 +249,129 @@ footer p span {
   animation: slideInTop 1.5s ease-in-out;
 }
 
-.welcomeAnimationSection1Background {
+.welcomeAnimationSectionBackground {
   background-size: 200% 200%;
   animation: gradient 10s ease infinite;
 }
 
-.welcomeAnimationSection1ContainerTextSlideLeft {
+.welcomeAnimationSectionContainerTextSlideLeft {
   animation: slideInLeft 1.2s ease-out;
 }
 
-.welcomeAnimationSection1ContainerTextSlideRight {
+.welcomeAnimationSectionContainerTextSlideRight {
   animation: slideInRight 1.2s ease-out;
 }
 
-.welcomeSection1ContainerFadeIn {
+.welcomeAnimationSectionContainerFadeIn {
   animation: fadeIn 2s ease-in-out;
 }
 
-.welcomeSection1ContainerTextFadeIn {
+.welcomeAnimationSectionContainerTextFadeIn {
   animation: fadeIn 1.5s ease-out;
 }
 
-.welcomeSection1ContainerTextFadeInZoom {
+.welcomeAnimationSectionContainerTextFadeInZoom {
   animation: fadeInZoom 1s ease-out;
 }
 
+.welcomeAnimationSectionFinal {
+  animation: gradientAnimation 10s ease infinite;
+}
+
 #welcome {
-  @apply welcomeAnimationSection1Background bg-gradient-to-r from-slate-200 via-gray-400 to-gray-600;
+  @apply welcomeAnimationSectionBackground bg-gradient-to-r from-slate-200 via-slate-400 to-slate-600;
+}
+#welcome #welcomeHeader {
+  @apply sticky top-0 z-50;
+}
+#welcome #welcomeHeader header {
+  @apply flex items-center justify-between px-8 welcomeAnimationHeaderLink;
+}
+#welcome #welcomeHeader header nav {
+  @apply ml-auto;
+}
+#welcome #welcomeHeader header nav ul {
+  @apply flex p-2 space-x-4 border-2 rounded-b-lg border-slate-500 bg-slate-500;
+}
+#welcome #welcomeHeader header nav ul li {
+  @apply welcomeAnimationHeaderLink;
+}
+#welcome #welcomeHeader header nav ul li #welcomeHeaderButtonSignIn {
+  @apply px-4 py-2 transition rounded-lg text-slate-700 bg-slate-200;
+}
+#welcome #welcomeHeader header nav ul li #welcomeHeaderButtonSignIn:hover {
+  @apply bg-slate-300;
+}
+#welcome #welcomeHeader header nav ul li #welcomeHeaderButtonSignUp {
+  @apply px-4 py-2 transition rounded-lg text-slate-200 bg-slate-600;
+}
+#welcome #welcomeHeader header nav ul li #welcomeHeaderButtonSignUp:hover {
+  @apply bg-slate-700;
+}
+
+#welcomeSectionHead {
+  @apply pt-[10%] h-screen welcomeAnimationSectionBackground bg-gradient-to-r from-slate-200 via-gray-400 to-gray-600;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer {
+  @apply container flex items-center justify-center px-[10%] mx-auto welcomeAnimationSectionContainerFadeIn;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerText {
+  @apply w-1/2 welcomeAnimationSectionContainerTextSlideLeft;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerText h1 {
+  @apply mb-4 text-5xl font-extrabold text-slate-800 welcomeAnimationSectionContainerTextFadeInZoom;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerText p {
+  @apply mb-6 text-2xl text-slate-600 welcomeAnimationSectionContainerTextFadeIn;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerText a {
+  @apply px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerText a:hover {
+  @apply bg-slate-700 scale-105;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerImg {
+  @apply flex items-center justify-center w-1/2 welcomeAnimationSectionContainerTextSlideRight;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerImg img {
+  @apply max-w-full transition-transform duration-500 rounded-lg shadow-lg;
+}
+#welcomeSectionHead #welcomeSectionHeadContainer #welcomeSectionHeadContainerImg img:hover {
+  @apply scale-110;
+}
+
+#welcomeSectionCard {
+  @apply h-screen py-16;
+}
+#welcomeSectionCard #welcomeSectionCardContainer {
+  @apply container px-8 mx-auto text-center;
+}
+#welcomeSectionCard #welcomeSectionCardContainer h2 {
+  @apply mb-4 text-4xl font-bold text-slate-800;
+}
+#welcomeSectionCard #welcomeSectionCardContainer p {
+  @apply mb-6 text-xl text-slate-600;
+}
+#welcomeSectionCard #welcomeSectionCardContainer div {
+  @apply my-[5%];
+}
+#welcomeSectionCard #welcomeSectionCardContainer div img {
+  @apply w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg;
+}
+#welcomeSectionCard #welcomeSectionCardContainer div img:hover {
+  @apply scale-110;
+}
+#welcomeSectionCard #welcomeSectionCardContainer a {
+  @apply px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600;
+}
+#welcomeSectionCard #welcomeSectionCardContainer a:hover {
+  @apply bg-slate-700;
+}
+
+#welcomeSectionFinal {
+  background: linear-gradient(-45deg, rgba(32, 35, 42, 0.8), rgb(40, 44, 52), rgba(50, 53, 60, 0.8), rgb(60, 64, 72));
+  background-size: 400% 400%;
+  @apply welcomeAnimationSectionFinal;
 }
 
 /* ========== Profile ========= */

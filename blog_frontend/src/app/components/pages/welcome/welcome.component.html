@@ -1,16 +1,16 @@
-<div id="welcome" class="font-sans">
+<div id="welcome">
     <!-- Header -->
-    <div id="welcomeHeader" class="sticky top-0 z-50">
-        <header class="flex items-center justify-between px-8 welcomeAnimationHeaderLink">
-            <nav class="ml-auto">
-                <ul class="flex p-2 space-x-4 border-2 rounded-b-lg border-slate-500 bg-slate-500">
-                    <li class="welcomeAnimationHeaderLink">
-                        <button routerLinkActive="active" class="px-4 py-2 transition rounded-lg text-slate-700 bg-slate-200 hover:bg-slate-300">
+    <div id="welcomeHeader">
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <button routerLinkActive="active" id="welcomeHeaderButtonSignIn">
                             <a [routerLink]="['/signIn']">Sign In</a>
                         </button>
                     </li>
-                    <li class="welcomeAnimationHeaderLink">
-                        <button routerLinkActive="active" class="px-4 py-2 transition rounded-lg text-slate-200 bg-slate-600 hover:bg-slate-700">
+                    <li>
+                        <button routerLinkActive="active" id="welcomeHeaderButtonSignUp">
                             <a [routerLink]="['/signUp']">Sign Up</a>
                         </button>
                     </li>
@@ -20,121 +20,121 @@
     </div>
     
     <!-- Section 1 : Hero -->
-    <section id="welcomeSection1" class="pt-[5%] h-screen welcomeAnimationSection1Background bg-gradient-to-r from-slate-200 via-gray-400 to-gray-600">
-        <div id="welcomeSection1Container" class="container flex items-center justify-center px-[10%] mx-auto welcomeSection1ContainerFadeIn">
-            <div id="welcomeSection1ContainerText" class="w-1/2 welcomeAnimationSection1ContainerTextSlideLeft">
-              <h1 class="mb-4 text-5xl font-extrabold text-slate-800 welcomeSection1ContainerTextFadeInZoom">
+    <section id="welcomeSectionHead">
+        <div id="welcomeSectionHeadContainer">
+            <div id="welcomeSectionHeadContainerText">
+              <h1>
                 Welcome to my Blog
               </h1>
-              <p class="mb-6 text-xl text-slate-600 welcomeSection1ContainerTextFadeIn">
+              <p>
                 A space dedicated to everything about Software Development. Join us to explore tutorials, articles, and much more.
               </p>
-              <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700 hover:scale-105">
+              <a [routerLink]="['/signIn']">
                 Explore Now
               </a>
             </div>
           
-            <div id="welcomeSection1ContainerImg" class="flex items-center justify-center w-1/2 welcomeAnimationSection1ContainerTextSlideRight">
-                <img src="https://via.placeholder.com/500" alt="Placeholder Image" class="max-w-full transition-transform duration-500 rounded-lg shadow-lg hover:scale-110">
+            <div id="welcomeSectionHeadContainerImg">
+                <img src="https://via.placeholder.com/500" alt="Placeholder Image">
             </div>
         </div>
     </section>
   
     <!-- Section 2 : Tutorials -->
-    <section class="h-screen py-16 bg-gray-200">
-        <div class="container px-8 mx-auto text-center">
-        <h3 class="mb-4 text-4xl font-bold text-slate-800">Tutorials</h3>
-        <p class="mb-6 text-xl text-slate-600">
-            Step-by-step guides to help you master various programming languages and frameworks.
-        </p>
-    
-        <div class="my-[5%]">
-            <img src="https://via.placeholder.com/1000x300" alt="Community Image" class="w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg hover:scale-110">
-        </div>
-    
-        <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700">
-            Learn More
-        </a>
+    <section id="welcomeSectionCard" class="bg-gray-100">
+        <div id="welcomeSectionCardContainer">
+            <h2>Tutorials</h2>
+            <p>
+                Step-by-step guides to help you master various programming languages and frameworks.
+            </p>
+        
+            <div>
+                <img src="https://via.placeholder.com/1000x300" alt="Community Image">
+            </div>
+        
+            <a [routerLink]="['/signIn']">
+                Learn More
+            </a>
         </div>
     </section>
 
     <!-- Section 3 : Articles -->
-    <section class="h-screen py-16 bg-gray-100">
-        <div class="container px-8 mx-auto text-center">
-        <h3 class="mb-4 text-4xl font-bold text-slate-800">Articles</h3>
-        <p class="mb-6 text-xl text-slate-600">
-            Read insightful articles on the latest trends and best practices in software development.
-        </p>
-    
-        <div class="my-[5%]">
-            <img src="https://via.placeholder.com/1000x300" alt="Community Image" class="w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg hover:scale-110">
-        </div>
-    
-        <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700">
-            Read More
-        </a>
+    <section id="welcomeSectionCard" class="bg-gray-200">
+        <div id="welcomeSectionCardContainer">
+            <h2>Articles</h2>
+            <p>
+                Read insightful articles on the latest trends and best practices in software development.
+            </p>
+        
+            <div>
+                <img src="https://via.placeholder.com/1000x300" alt="Community Image">
+            </div>
+        
+            <a [routerLink]="['/signIn']">
+                Read More
+            </a>
         </div>
     </section>
 
     <!-- Section 4 : Tech News -->
-    <section class="h-screen py-16 bg-gray-200">
-        <div class="container px-8 mx-auto text-center">
-        <h3 class="mb-4 text-4xl font-bold text-slate-800">Tech News</h3>
-        <p class="mb-6 text-xl text-slate-600">
+    <section id="welcomeSectionCard" class="bg-gray-100">
+        <div id="welcomeSectionCardContainer">
+        <h2>Tech News</h2>
+        <p>
             Stay updated with the latest news in the tech industry, from frameworks to tools.
         </p>
     
         <div class="my-[5%]">
-            <img src="https://via.placeholder.com/1000x300" alt="Community Image" class="w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg hover:scale-110">
+            <img src="https://via.placeholder.com/1000x300" alt="Community Image">
         </div>
     
-        <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700">
+        <a [routerLink]="['/signIn']">
             Discover More
         </a>
         </div>
     </section>
 
     <!-- Section 5 : Community -->
-    <section class="h-screen py-16 bg-gray-100">
-        <div class="container px-8 mx-auto text-center">
-        <h3 class="mb-4 text-4xl font-bold text-slate-800">Community</h3>
-        <p class="mb-6 text-xl text-slate-600">
+    <section id="welcomeSectionCard" class="bg-gray-200">
+        <div id="welcomeSectionCardContainer">
+        <h2>Community</h2>
+        <p>
             Join our developer community to engage in discussions, share projects, and grow together.
         </p>
     
-        <div class="my-[5%]">
-            <img src="https://via.placeholder.com/1000x300" alt="Community Image" class="w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg hover:scale-110">
+        <div>
+            <img src="https://via.placeholder.com/1000x300" alt="Community Image">
         </div>
     
-        <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700">
+        <a [routerLink]="['/signIn']">
             Join Now
         </a>
         </div>
     </section>
     
     <!-- Section 6 : Projects -->
-    <section class="h-screen py-16 bg-gray-200">
-        <div class="container px-8 mx-auto text-center">
-        <h3 class="mb-4 text-4xl font-bold text-slate-800">Projects</h3>
-        <p class="mb-6 text-xl text-slate-600">
+    <section id="welcomeSectionCard" class="bg-gray-100 ">
+        <div id="welcomeSectionCardContainer">
+        <h2>Projects</h2>
+        <p>
             Explore open-source projects, collaborate with others, and showcase your skills.
         </p>
     
-        <div class="my-[5%]">
-            <img src="https://via.placeholder.com/1000x300" alt="Community Image" class="w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg hover:scale-110">
+        <div>
+            <img src="https://via.placeholder.com/1000x300" alt="Community Image">
         </div>
     
-        <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700">
+        <a [routerLink]="['/signIn']">
             Explore Projects
         </a>
         </div>
     </section>
     
     <!-- Section 7 : Join Us! -->
-    <section class="pt-[5%] relative h-screen py-16 overflow-hidden text-slate-200 bg-gradient-to-r from-slate-500 via-slate-600 to-slate-500">
+    <section id="welcomeSectionFinal" class="pt-[5%] relative h-screen py-16 overflow-hidden text-slate-200 bg-gradient-to-r from-slate-500 via-slate-600 to-slate-500">
         <div class="container relative z-10 px-8 mx-auto text-center">
             <div class="relative z-20 max-w-2xl p-8 mx-auto shadow-lg bg-slate-200 bg-opacity-10 backdrop-blur-lg rounded-xl">
-                <h3 class="mb-6 text-5xl font-extrabold text-slate-800">Join Our Developer Community</h3>
+                <h2 class="mb-6 text-5xl font-extrabold text-slate-800">Join Our Developer Community</h2>
                 <p class="max-w-3xl mx-auto mb-8 text-2xl font-light">
                 Over <span class="font-semibold">x users</span> have already joined us. Don't miss out on the opportunity to improve your skills, network with others, and be part of an active community of developers just like you.
                 </p>
