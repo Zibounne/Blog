@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, Inject, PLATFORM_ID, On
 import { Title } from '@angular/platform-browser';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 
 @Component({
   selector: 'app-welcome',
@@ -11,6 +12,19 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     RouterLink,
     RouterLinkActive,
     CommonModule
+  ],
+  animations: [
+    trigger('fadeIn', [
+      state('hidden', style({ 
+        opacity: 0 
+      })),
+      state('visible', style({ 
+        opacity: 1,
+      })),
+      transition('hidden => visible', [
+        animate('500ms ease-in')
+      ])
+    ])
   ]
 })
 
@@ -22,6 +36,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private currentSectionIndex: number = 0;
   private isScrolling: boolean = false;
   private scrollTimeout: any;
+  public  welcomeIsVisible: boolean[] = [];
 
   ////////////////////// Constructor //////////////////////
 
@@ -49,6 +64,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.sections = Array.from(document.querySelectorAll('section'));
       this.scrollToSection(0);
     }
+
+    this.sections.forEach(() => this.welcomeIsVisible.push(false));
   }
 
   // Destroy | Reactivates scrolling when leaving this page
@@ -93,7 +110,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isScrolling = true;
     this.currentSectionIndex = index;
     const section = this.sections[this.currentSectionIndex];
-    
+    this.welcomeIsVisible[this.currentSectionIndex] = true;
+
     section.scrollIntoView({
       behavior: 'smooth',
       block: 'start'

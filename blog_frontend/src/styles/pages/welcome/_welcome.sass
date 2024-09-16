@@ -56,6 +56,12 @@
     100%
         background-position: 0% 50%
 
+@keyframes blink
+    0%, 100%
+        opacity: 1
+    50%
+        opacity: 0
+
 ///////////////////////// Animation /////////////////////////
 
 .welcomeAnimationHeaderLogo
@@ -85,6 +91,9 @@
 
 .welcomeAnimationSectionFinal
     animation: gradientAnimation 10s ease infinite
+
+.welcomeAnimationButtonBlink
+    animation: blink 0.75s ease-in-out 2
 
 ////////////////////////// Welcome //////////////////////////
 
@@ -130,7 +139,7 @@
             img:hover
                 @apply scale-110
 
-#welcomeSectionCard
+.welcomeSectionCard
     @apply h-screen py-16
     #welcomeSectionCardContainer
         @apply container px-8 mx-auto text-center
@@ -150,9 +159,21 @@
             @apply bg-slate-700
 
 #welcomeSectionFinal
-    background: linear-gradient(-45deg, rgba(32, 35, 42, 0.80), rgba(40, 44, 52, 1), rgba(50, 53, 60, 0.80), rgba(60, 64, 72, 1))
+    background: linear-gradient(-90deg, rgba(32, 35, 42, 0.80), rgba(40, 44, 52, 1), rgba(50, 53, 60, 0.80), rgba(60, 64, 72, 1))
     background-size: 400% 400%
-    @apply welcomeAnimationSectionFinal
+    @apply welcomeAnimationSectionFinal pt-[5%] relative h-screen py-16 text-slate-200
+    #welcomeSectionFinalContent
+        @apply container relative z-10 px-8 mx-auto text-center
+        div
+            @apply relative z-20 max-w-2xl p-8 mx-auto shadow-lg bg-slate-200 bg-opacity-10 backdrop-blur-lg rounded-xl
+            h2
+                @apply mb-6 text-5xl font-extrabold text-slate-800
+            p
+                @apply max-w-3xl mx-auto mb-8 text-2xl font-light
+            a
+                @apply px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600
+            a:hover
+                @apply bg-slate-700
 
 ///////////////////////// Responsive ////////////////////////
 

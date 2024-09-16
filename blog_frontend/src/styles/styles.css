@@ -241,6 +241,14 @@ footer p span {
     background-position: 0% 50%;
   }
 }
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .welcomeAnimationHeaderLogo {
   animation: slideInLeft 1s ease-in-out;
 }
@@ -276,6 +284,10 @@ footer p span {
 
 .welcomeAnimationSectionFinal {
   animation: gradientAnimation 10s ease infinite;
+}
+
+.welcomeAnimationButtonBlink {
+  animation: blink 0.75s ease-in-out 2;
 }
 
 #welcome {
@@ -340,38 +352,56 @@ footer p span {
   @apply scale-110;
 }
 
-#welcomeSectionCard {
+.welcomeSectionCard {
   @apply h-screen py-16;
 }
-#welcomeSectionCard #welcomeSectionCardContainer {
+.welcomeSectionCard #welcomeSectionCardContainer {
   @apply container px-8 mx-auto text-center;
 }
-#welcomeSectionCard #welcomeSectionCardContainer h2 {
+.welcomeSectionCard #welcomeSectionCardContainer h2 {
   @apply mb-4 text-4xl font-bold text-slate-800;
 }
-#welcomeSectionCard #welcomeSectionCardContainer p {
+.welcomeSectionCard #welcomeSectionCardContainer p {
   @apply mb-6 text-xl text-slate-600;
 }
-#welcomeSectionCard #welcomeSectionCardContainer div {
+.welcomeSectionCard #welcomeSectionCardContainer div {
   @apply my-[5%];
 }
-#welcomeSectionCard #welcomeSectionCardContainer div img {
+.welcomeSectionCard #welcomeSectionCardContainer div img {
   @apply w-full h-auto max-w-full mx-auto transition-transform duration-500 rounded-lg shadow-lg;
 }
-#welcomeSectionCard #welcomeSectionCardContainer div img:hover {
+.welcomeSectionCard #welcomeSectionCardContainer div img:hover {
   @apply scale-110;
 }
-#welcomeSectionCard #welcomeSectionCardContainer a {
+.welcomeSectionCard #welcomeSectionCardContainer a {
   @apply px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600;
 }
-#welcomeSectionCard #welcomeSectionCardContainer a:hover {
+.welcomeSectionCard #welcomeSectionCardContainer a:hover {
   @apply bg-slate-700;
 }
 
 #welcomeSectionFinal {
-  background: linear-gradient(-45deg, rgba(32, 35, 42, 0.8), rgb(40, 44, 52), rgba(50, 53, 60, 0.8), rgb(60, 64, 72));
+  background: linear-gradient(-90deg, rgba(32, 35, 42, 0.8), rgb(40, 44, 52), rgba(50, 53, 60, 0.8), rgb(60, 64, 72));
   background-size: 400% 400%;
-  @apply welcomeAnimationSectionFinal;
+  @apply welcomeAnimationSectionFinal pt-[5%] relative h-screen py-16 text-slate-200;
+}
+#welcomeSectionFinal #welcomeSectionFinalContent {
+  @apply container relative z-10 px-8 mx-auto text-center;
+}
+#welcomeSectionFinal #welcomeSectionFinalContent div {
+  @apply relative z-20 max-w-2xl p-8 mx-auto shadow-lg bg-slate-200 bg-opacity-10 backdrop-blur-lg rounded-xl;
+}
+#welcomeSectionFinal #welcomeSectionFinalContent div h2 {
+  @apply mb-6 text-5xl font-extrabold text-slate-800;
+}
+#welcomeSectionFinal #welcomeSectionFinalContent div p {
+  @apply max-w-3xl mx-auto mb-8 text-2xl font-light;
+}
+#welcomeSectionFinal #welcomeSectionFinalContent div a {
+  @apply px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600;
+}
+#welcomeSectionFinal #welcomeSectionFinalContent div a:hover {
+  @apply bg-slate-700;
 }
 
 /* ========== Profile ========= */

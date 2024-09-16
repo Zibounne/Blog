@@ -41,7 +41,10 @@
     </section>
   
     <!-- Section 2 : Tutorials -->
-    <section id="welcomeSectionCard" class="bg-gray-100">
+    <section
+        [@fadeIn]="welcomeIsVisible[1] ? 'visible' : 'hidden'"
+        class="bg-gray-100 welcomeSectionCard"
+    >
         <div id="welcomeSectionCardContainer">
             <h2>Tutorials</h2>
             <p>
@@ -52,14 +55,17 @@
                 <img src="https://via.placeholder.com/1000x300" alt="Community Image">
             </div>
         
-            <a [routerLink]="['/signIn']">
+            <a [routerLink]="['/signIn']" [ngClass]="{'welcomeAnimationButtonBlink': welcomeIsVisible[1]}">
                 Learn More
             </a>
         </div>
     </section>
 
     <!-- Section 3 : Articles -->
-    <section id="welcomeSectionCard" class="bg-gray-200">
+    <section
+        [@fadeIn]="welcomeIsVisible[2] ? 'visible' : 'hidden'"
+        class="bg-gray-300 welcomeSectionCard"
+    >
         <div id="welcomeSectionCardContainer">
             <h2>Articles</h2>
             <p>
@@ -70,14 +76,17 @@
                 <img src="https://via.placeholder.com/1000x300" alt="Community Image">
             </div>
         
-            <a [routerLink]="['/signIn']">
+            <a [routerLink]="['/signIn']" [ngClass]="{'welcomeAnimationButtonBlink': welcomeIsVisible[2]}">
                 Read More
             </a>
         </div>
     </section>
 
     <!-- Section 4 : Tech News -->
-    <section id="welcomeSectionCard" class="bg-gray-100">
+    <section
+        [@fadeIn]="welcomeIsVisible[3] ? 'visible' : 'hidden'"
+        class="bg-gray-100 welcomeSectionCard"
+    >
         <div id="welcomeSectionCardContainer">
         <h2>Tech News</h2>
         <p>
@@ -88,14 +97,17 @@
             <img src="https://via.placeholder.com/1000x300" alt="Community Image">
         </div>
     
-        <a [routerLink]="['/signIn']">
+        <a [routerLink]="['/signIn']" [ngClass]="{'welcomeAnimationButtonBlink': welcomeIsVisible[3]}">
             Discover More
         </a>
         </div>
     </section>
 
     <!-- Section 5 : Community -->
-    <section id="welcomeSectionCard" class="bg-gray-200">
+    <section
+        [@fadeIn]="welcomeIsVisible[4] ? 'visible' : 'hidden'"
+        class="bg-gray-300 welcomeSectionCard"
+    >
         <div id="welcomeSectionCardContainer">
         <h2>Community</h2>
         <p>
@@ -106,14 +118,17 @@
             <img src="https://via.placeholder.com/1000x300" alt="Community Image">
         </div>
     
-        <a [routerLink]="['/signIn']">
+        <a [routerLink]="['/signIn']" [ngClass]="{'welcomeAnimationButtonBlink': welcomeIsVisible[4]}">
             Join Now
         </a>
         </div>
     </section>
     
     <!-- Section 6 : Projects -->
-    <section id="welcomeSectionCard" class="bg-gray-100 ">
+    <section
+        [@fadeIn]="welcomeIsVisible[5] ? 'visible' : 'hidden'"
+        class="bg-gray-100 welcomeSectionCard"
+    >
         <div id="welcomeSectionCardContainer">
         <h2>Projects</h2>
         <p>
@@ -124,22 +139,27 @@
             <img src="https://via.placeholder.com/1000x300" alt="Community Image">
         </div>
     
-        <a [routerLink]="['/signIn']">
+        <a [routerLink]="['/signIn']" [ngClass]="{'welcomeAnimationButtonBlink': welcomeIsVisible[5]}">
             Explore Projects
         </a>
         </div>
     </section>
     
     <!-- Section 7 : Join Us! -->
-    <section id="welcomeSectionFinal" class="pt-[5%] relative h-screen py-16 overflow-hidden text-slate-200 bg-gradient-to-r from-slate-500 via-slate-600 to-slate-500">
-        <div class="container relative z-10 px-8 mx-auto text-center">
-            <div class="relative z-20 max-w-2xl p-8 mx-auto shadow-lg bg-slate-200 bg-opacity-10 backdrop-blur-lg rounded-xl">
-                <h2 class="mb-6 text-5xl font-extrabold text-slate-800">Join Our Developer Community</h2>
-                <p class="max-w-3xl mx-auto mb-8 text-2xl font-light">
+    <section
+        [@fadeIn]="welcomeIsVisible[6] ? 'visible' : 'hidden'"
+        id="welcomeSectionFinal"
+    >
+        <div id="welcomeSectionFinalContent">
+            <div>
+                <h2>
+                    Join Our Developer Community
+                </h2>
+                <p>
                 Over <span class="font-semibold">x users</span> have already joined us. Don't miss out on the opportunity to improve your skills, network with others, and be part of an active community of developers just like you.
                 </p>
         
-                <a [routerLink]="['/signIn']" class="px-6 py-3 text-lg font-semibold transition-all duration-300 rounded-full shadow-md text-slate-200 bg-slate-600 hover:bg-slate-700">
+                <a [routerLink]="['/signIn']" [ngClass]="{'welcomeAnimationButtonBlink': welcomeIsVisible[6]}">
                     Join Us Now!
                 </a>
             </div>
